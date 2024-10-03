@@ -1,0 +1,462 @@
+/* Global settings */
+body {
+  margin-top: 66px;
+  /* Adjusting margin to accommodate the fixed navbar */
+  font-family: Arial, sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* end of global settings*/
+
+/* Navbar styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 50px;
+  border-bottom: 2px solid #eee;
+  position: fixed;
+  /* Fixed position */
+  height: 80px;
+  width: 100%;
+  /* Take the full width of the page */
+  top: 0;
+  /* Stay at the top of the page */
+  left: 0;
+  z-index: 1000;
+  /* Ensure it stays above other elements */
+}
+
+/* Add a margin to the content below the navbar to prevent it from being hidden */
+body {
+  padding-top: 70px;
+  /* Adjust based on navbar height */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 75px;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  transition: all 0.3s ease;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  padding: 8px 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: teal;
+}
+
+/* Dropdown Styles */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  padding: 10px 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  text-align: left;
+  color: black;
+}
+
+.dropdown-menu a:hover {
+  background-color: teal;
+  color: white;
+}
+
+/* Contact Button */
+.contact-btn {
+  background-color: teal;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #00796b;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+
+  /* Hide the normal nav links */
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Dark background */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    z-index: 1000;
+    /* Ensure it is above the carousel */
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .nav-links a {
+    color: white;
+    font-size: 18px;
+  }
+
+  .nav-links a:hover {
+    color: teal;
+  }
+
+  /* Hamburger menu visible on mobile */
+  .hamburger {
+    display: flex;
+    z-index: 1001;
+    /* Ensure hamburger is also on top */
+  }
+
+  /* Hide the search input on mobile */
+  .search {
+    display: none;
+  }
+}
+
+/* End of navbar styling */
+
+/* Carousel styling */
+.carousel-inner img {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* end of carousel styling */
+
+/* Cards Section */
+.card-section {
+  margin-top: -60px;
+  /* Adjust this value to control how much overlap with the carousel */
+  padding: 0 15px;
+  /* Optional padding inside the cards section */
+  z-index: 2;
+  /* Ensure cards are above the carousel */
+  position: relative;
+  text-decoration: none;
+}
+
+.card-custom {
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bg-dark {
+  background-color: #237b7a !important;
+}
+
+.bg-warning {
+  background-color: #84d55c !important;
+}
+
+/* end of first card section */
+
+
+/* 2nd Card section */
+/* Ensure no underline in links within cards */
+.card-content a {
+  text-decoration: none;
+  /* Remove underline */
+  color: inherit;
+  /* Keep the same color as the surrounding text */
+}
+
+/* Ensure no underline on hover */
+.card-content a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Rest of the CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.card {
+  width: 30%;
+  margin: 10px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* end of 2nd card section */
+
+/* Button styling */
+button {
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* footer section */
+
+/* Join Us Section */
+.join-us-container {
+  background-color: #f1f1f1;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.join-us-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.join-us-content .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+}
+
+.join-us-content .social-links li {
+  display: inline-block;
+}
+
+.join-us-content .social-links a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #337ab7;
+  transition: color 0.3s ease;
+}
+
+.join-us-content .social-links a:hover {
+  color: #23527c;
+}
+
+.join-us-content .fa {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+/* Footer Section */
+/* Join Us Section */
+.join-us-container {
+  background-color: #0c5871;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.join-us-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.join-us-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons li {
+  display: inline-block;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #b70909;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #176cad;
+}
+
+.social-icons .fa {
+  font-size: 28px;
+}
+
+/* Footer Section */
+footer {
+  background-color: #f7f7f7;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-section {
+  flex-basis: 20%;
+  margin: 10px;
+}
+
+.footer-section h2 {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #337ab7;
+  font-size: 14px;
+}
+
+.footer-section a:hover {
+  color: #23527c;
+}
+
+/* Copyright */
+.footer-copyright {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.footer-copyright p {
+  font-size: 12px;
+  color: #666;
+}

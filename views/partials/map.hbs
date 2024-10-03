@@ -1,0 +1,92 @@
+
+<style>
+    
+/* video section */
+/* Styling the entire section */
+.content-section {
+  padding: 60px 20px;
+  /* Adds spacing inside the section */
+  background-color: white;
+  /* Light background for contrast */
+  text-align: center;
+  /* Center the text */
+}
+
+/* Container to limit the width */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Centers the content */
+  margin-bottom: -80px;
+  padding: 0 20px;
+  /* Adds padding on smaller screens */
+}
+
+/* Title of the section */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Paragraph styling */
+.section-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: black;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* set the container height to 100% of the viewport */
+}
+
+.video-container video {
+  width: 75%;
+  height: 75%;
+}
+
+</style>
+
+    
+
+    <section class="content-section">
+        <div class="container">
+            <h4>
+                <center style="color: #237b7a">Where We Make A Difference</center>
+            </h4>
+          <p class="section-paragraph">
+            Our organization has been dedicated to making a meaningful impact in communities across the globe. Through our work, we strive to create sustainable change and improve lives by addressing critical social issues.
+          </p>
+        </div>
+    </section>
+    <div class="video-container">
+        <video id="myVideo" width="75%" height="75%">
+            <source src="static/images/kinmap.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+
+    <script>
+        const video = document.getElementById('myVideo');
+        const videoContainer = document.querySelector('.video-container');
+
+        function checkIfInView() {
+            const rect = videoContainer.getBoundingClientRect();
+            const viewTypeHeight = window.innerHeight;
+            if (rect.top <= viewTypeHeight && rect.bottom >= viewTypeHeight) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+
+        window.addEventListener('scroll', checkIfInView);
+        window.addEventListener('resize', checkIfInView);
+    </script>

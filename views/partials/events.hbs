@@ -1,0 +1,55 @@
+<!-- 2nd Card section for events -->
+<h4>
+    <center style="color: #237b7a">Captured Moments</center>
+</h4>
+<div class="card-container" id="gallery">
+    <div class="card">
+        <a href="album1">
+            <div class="card-image" style="background-image: url('static/images/KINAI0.png');"></div>
+            <div class="card-content">
+                <h3 style="text-decoration: none;">Training Workshops</h3>
+                <p style="text-decoration: none;">What We Provide</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="album2">
+            <div class="card-image" style="background-image: url('static/images/KINAI1.jpg');"></div>
+            <div class="card-content">
+                <h3 style="text-decoration: none;">Field Works</h3>
+                <p style="text-decoration: none;">Where We Work</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="album3">
+            <div class="card-image" style="background-image: url('static/images/gallery1.jpg');"></div>
+            <div class="card-content">
+                <h3 style="text-decoration: none;">Rehabilitation</h3>
+                <p style="text-decoration: none;">Join Us</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Add JavaScript for automatic image slideshow -->
+<script>
+    // Automatic image slideshow for cards
+    const images = [
+        'static/images/KINAI0.png',
+        'static/images/KINAI1.jpg',
+        'static/images/gallery1.jpg'
+    ];
+
+    const cardImages = document.querySelectorAll('.card-image');
+    let currentImageIndex = 0;
+
+    setInterval(() => {
+        cardImages.forEach((cardImage, index) => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            cardImage.style.backgroundImage = `url(${images[(currentImageIndex + index) % images.length]})`;
+        });
+    }, 3000); // Changes images every 3 seconds
+</script>

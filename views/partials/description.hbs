@@ -1,0 +1,93 @@
+<style>
+/* General resets */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.who-we-are {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+
+.descontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap; /* Allow content to wrap on small screens */
+}
+
+.descontent {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.descontent h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.descontent p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.image {
+  flex: 1;
+  text-align: center; /* Center image on smaller screens */
+}
+
+.image img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .descontainer {
+    flex-direction: column; /* Stack content vertically on small screens */
+  }
+
+  .descontent {
+    padding-right: 0;
+    margin-bottom: 20px; /* Add space between text and image */
+    text-align: center; /* Center text on smaller screens */
+  }
+
+  .descontent h2 {
+    font-size: 28px;
+  }
+
+  .descontent p {
+    font-size: 16px;
+  }
+}
+</style>
+
+<!-- descriptive section -->
+<section class="who-we-are">
+    <div class="descontainer">
+      <div class="descontent">
+        <h2>Who We Are</h2>
+        <p>
+          Aafanta Nepal / KIN Nepal is a national non-profit, nongovernmental organization (NGO) dedicated to ending human trafficking and gender-based violence in Nepal. Since our inception in 2008, we have been providing comprehensive and holistic support to survivors while actively advocating to address the root causes of exploitation in Nepal.
+        </p>
+      </div>
+      <div class="image">
+        <img src="static/images/KINAI0.png" alt="KIN NEPAL AI photo">
+      </div>
+    </div>
+</section>
+<!-- end of descriptive section -->
